@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: red;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  height: 100%;
+  background: linear-gradient(#333, #000);
+  font-family: "Metal Mania", sans-serif;
+}
+
+.gameContainer {
+  background-image: url(./images/bg.jpg);
+  filter: brightness(120%);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+.front-bg {
+  background-image: url(./images/bg-front.png);
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+}
+
+/* Cloud animation keyframes */
+@keyframes clouds-loop-1 {
+  to {
+    background-position: -1000px 0;
+  }
+}
+
+@keyframes clouds-loop-2 {
+  to {
+    background-position: -1000px 0;
+  }
+}
+
+@keyframes clouds-loop-3 {
+  to {
+    background-position: -1579px 0;
+  }
+}
+
+/* Apply cloud animation to elements */
+.clouds {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.clouds-1 {
+  background-image: url("https://s.cdpn.io/15514/clouds_2.png");
+  animation: clouds-loop-1 20s infinite linear;
+}
+
+.clouds-2 {
+  background-image: url("https://s.cdpn.io/15514/clouds_1.png");
+  animation: clouds-loop-2 15s infinite linear;
+}
+.clouds-3 {
+  background-image: url("https://s.cdpn.io/15514/clouds_3.png");
+  animation: clouds-loop-3 17s infinite linear;
+  filter: blur(3px);
+}
+
+.defender {
+  background-image: url(./images/warrior-fighter.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 143px;
+  height: 200px;
+  position: absolute;
+  bottom: 100px;
+  left: 52px;
+  z-index: 2;
+}
+
+.obstacle {
+  width: 143px;
+  height: 200px;
+  background-image: url(./images/dungeons-dr.png);
+  transform: rotateY(180deg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: 100px;
+  left: 85vw;
+  z-index: 3;
+}
+
+.animateDefender {
+  animation: defenderAnimation 0.6s linear;
+}
+
+.obstacleAni {
+  animation: obstacleAnimation 5s linear infinite;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px 10px 10px 25px;
+  transition: 0.5s ease-in-out;
+  z-index: 6;
+  letter-spacing: 1rem;
+  font-family: "Metal Mania", sans-serif;
+}
+
+.btn:hover {
+  cursor: pointer;
+  border-radius: 20px;
+  color: white;
+}
+
+.gameOver {
+  position: relative;
+  top: 63px;
+  font-size: 5rem;
+  text-align: center;
+  color: darkred;
+  line-height: 1em;
+  z-index: 7;
+  transition: 1s ease-in-out;
+}
+
+.instructions {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  text-align: justify;
+  background: rgba(193, 193, 193, 0.5);
+  font-size: 20px;
+  width: 30%;
+  height: auto;
+  font-family: "Ubuntu", sans-serif;
+  padding: 1%;
+  color: maroon;
+}
+
+.audioOnOff {
+  position: absolute;
+  background: rgba(193, 193, 193, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  width: 3%;
+  top: 14%;
+  right: 3%;
+  font-size: 20px;
+  z-index: 6;
+}
+
+.defenderDown {
+  transform: rotate(-90deg);
+  position: relative;
+  bottom: -300px;
+}
+
+#scoreCont {
+  font-size: 25px;
+  color: #bf0404;
+  font-weight: bold;
+  position: absolute;
+  right: 45px;
+  top: 31px;
+  border: 2px solid black;
+  padding: 10px;
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 10px;
+}
+
+@keyframes defenderAnimation {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 422px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes obstacleAnimation {
+  0% {
+    left: 110vw;
+  }
+  100% {
+    left: -10vw;
+  }
+}
