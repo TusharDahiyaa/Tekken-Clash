@@ -213,3 +213,52 @@ body {
     left: -10vw;
   }
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 1299.98px) {
+  .defender {
+    width: 120px;
+    height: 30%;
+    bottom: 80px;
+  }
+
+  .obstacle {
+    width: 120px;
+    height: 30%;
+    bottom: 80px;
+  }
+
+  .defenderDown {
+    bottom: -280px;
+  }
+
+  #scoreCont {
+    font-size: 20px;
+    right: 2%;
+    top: 2%;
+  }
+
+  .clouds {
+    height: 50%;
+  }
+
+  .btn {
+    font-size: 2rem;
+  }
+
+  .gameOver {
+    top: 5%;
+    font-size: 4rem;
+  }
+
+  .instructions {
+    font-size: 16px;
+  }
+
+  .audioOnOff {
+    padding: 5px;
+    top: 13%;
+    right: 2%;
+  }
+}
